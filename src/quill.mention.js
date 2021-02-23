@@ -45,6 +45,7 @@ class Mention {
       offsetLeft: 0,
       isolateCharacter: false,
       fixMentionsToQuill: false,
+      fixMentionsToQuillRightEdge: false,
       mentionsContainment: "window",
       positioningStrategy: "normal",
       defaultMenuOrientation: "bottom",
@@ -482,7 +483,13 @@ class Mention {
 
     const rightPos =
       leftPos + this.mentionContainer.offsetWidth + containerPos.left;
-    return rightPos > mentionContainerWidth;
+    const browserWidth =
+      window.pageXOffset + document.documentElement.clientWidth;
+
+    if (this.fixMentionsToQuillRightEdge) {
+      return rightPos > containerPos.right;
+    }
+    return rightPos > browserWidth;
   }
 
   setIsOpen(isOpen) {

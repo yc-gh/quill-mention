@@ -295,6 +295,7 @@ var Mention = /*#__PURE__*/function () {
       offsetLeft: 0,
       isolateCharacter: false,
       fixMentionsToQuill: false,
+      fixMentionsToQuillRightEdge: false,
       mentionsContainment: "window",
       positioningStrategy: "normal",
       defaultMenuOrientation: "bottom",
@@ -704,7 +705,13 @@ var Mention = /*#__PURE__*/function () {
       }
 
       var rightPos = leftPos + this.mentionContainer.offsetWidth + containerPos.left;
-      return rightPos > mentionContainerWidth;
+      var browserWidth = window.pageXOffset + document.documentElement.clientWidth;
+
+      if (this.fixMentionsToQuillRightEdge) {
+        return rightPos > containerPos.right;
+      }
+
+      return rightPos > browserWidth;
     }
   }, {
     key: "setIsOpen",
