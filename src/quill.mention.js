@@ -487,7 +487,8 @@ class Mention {
     const mentionContainerWidth =
       this.mentionContainerWidth + containerPos.left;
     // return rightPos > browserWidth;
-    return rightPos > mentionContainerWidth;
+    // return rightPos > mentionContainerWidth;
+    return rightPos > 0;
   }
 
   setIsOpen(isOpen) {

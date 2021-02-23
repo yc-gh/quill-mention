@@ -702,8 +702,9 @@ var Mention = /*#__PURE__*/function () {
       var rightPos = leftPos + this.mentionContainer.offsetWidth + containerPos.left;
       var browserWidth = window.pageXOffset + document.documentElement.clientWidth;
       var mentionContainerWidth = this.mentionContainerWidth + containerPos.left; // return rightPos > browserWidth;
+      // return rightPos > mentionContainerWidth;
 
-      return rightPos > mentionContainerWidth;
+      return rightPos > 0;
     }
   }, {
     key: "setIsOpen",
