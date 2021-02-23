@@ -704,7 +704,7 @@ var Mention = /*#__PURE__*/function () {
       var mentionContainerWidth = this.mentionContainerWidth + containerPos.left; // return rightPos > browserWidth;
       // return rightPos > mentionContainerWidth;
 
-      return rightPos > 0;
+      return true;
     }
   }, {
     key: "setIsOpen",
