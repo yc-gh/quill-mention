@@ -482,10 +482,6 @@ class Mention {
 
     const rightPos =
       leftPos + this.mentionContainer.offsetWidth + containerPos.left;
-    const browserWidth =
-      window.pageXOffset + document.documentElement.clientWidth;
-    const mentionContainerWidth =
-      this.mentionContainerWidth + containerPos.left;
     return rightPos > mentionContainerWidth;
   }
 
