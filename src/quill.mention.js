@@ -486,7 +486,7 @@ class Mention {
     const browserWidth =
       window.pageXOffset + document.documentElement.clientWidth;
 
-    if (this.fixMentionsToQuillRightEdge) {
+    if (this.options.fixMentionsToQuillRightEdge) {
       return rightPos > containerPos.right;
     }
     return rightPos > browserWidth;

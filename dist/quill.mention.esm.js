@@ -703,7 +703,7 @@ var Mention = /*#__PURE__*/function () {
       var rightPos = leftPos + this.mentionContainer.offsetWidth + containerPos.left;
       var browserWidth = window.pageXOffset + document.documentElement.clientWidth;
 
-      if (this.fixMentionsToQuillRightEdge) {
+      if (this.options.fixMentionsToQuillRightEdge) {
         return rightPos > containerPos.right;
       }
 
