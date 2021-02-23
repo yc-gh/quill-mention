@@ -486,9 +486,7 @@ class Mention {
       window.pageXOffset + document.documentElement.clientWidth;
     const mentionContainerWidth =
       this.mentionContainerWidth + containerPos.left;
-    // return rightPos > browserWidth;
-    // return rightPos > mentionContainerWidth;
-    return true;
+    return rightPos > mentionContainerWidth;
   }
 
   setIsOpen(isOpen) {
