@@ -705,6 +705,9 @@ var Mention = /*#__PURE__*/function () {
 
       var rightPos = leftPos + this.mentionContainer.offsetWidth + containerPos.left;
       var browserWidth = window.pageXOffset + document.documentElement.clientWidth;
+      console.log(this.mentionContainerWidth); // const mentionContainerWidth =
+      //   this.mentionContainerWidth
+
       return rightPos > browserWidth;
     }
   }, {
