@@ -296,6 +296,7 @@ var Mention = /*#__PURE__*/function () {
       isolateCharacter: false,
       fixMentionsToQuill: false,
       fixMentionsToQuillRightEdge: false,
+      fixMentionsBottomDirection: false,
       mentionsContainment: "window",
       positioningStrategy: "normal",
       defaultMenuOrientation: "bottom",
@@ -682,6 +683,8 @@ var Mention = /*#__PURE__*/function () {
   }, {
     key: "containerBottomIsNotVisible",
     value: function containerBottomIsNotVisible(topPos, containerPos) {
+      if (this.options.fixMentionsBottomDirection) return false;
+
       if (this.options.mentionsContainment === "quill") {
         var mentionOffsetHeight = this.mentionContainer.offsetHeight;
         var quillScrollTop = this.quill.container.scrollTop;

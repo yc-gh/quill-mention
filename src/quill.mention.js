@@ -46,6 +46,7 @@ class Mention {
       isolateCharacter: false,
       fixMentionsToQuill: false,
       fixMentionsToQuillRightEdge: false,
+      fixMentionsBottomDirection: false,
       mentionsContainment: "window",
       positioningStrategy: "normal",
       defaultMenuOrientation: "bottom",
@@ -453,6 +454,7 @@ class Mention {
   }
 
   containerBottomIsNotVisible(topPos, containerPos) {
+    if (this.options.fixMentionsBottomDirection) return false;
     if (this.options.mentionsContainment === "quill") {
       const mentionOffsetHeight = this.mentionContainer.offsetHeight;
       const quillScrollTop = this.quill.container.scrollTop;
