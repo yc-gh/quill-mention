@@ -292,7 +292,9 @@ var Mention = /*#__PURE__*/function () {
       isolateCharacter: false,
       fixMentionsToQuill: false,
       fixMentionsToQuillRightEdge: false,
-      fixMentionsBottomDirection: false,
+      //Prevent mention menu overflowing quill right edge
+      fixMentionsBottomDirectionGrowth: false,
+      //Fix mention menu growth direction downwards
       mentionsContainment: "window",
       positioningStrategy: "normal",
       defaultMenuOrientation: "bottom",
@@ -679,7 +681,7 @@ var Mention = /*#__PURE__*/function () {
   }, {
     key: "containerBottomIsNotVisible",
     value: function containerBottomIsNotVisible(topPos, containerPos) {
-      if (this.options.fixMentionsBottomDirection) return false;
+      if (this.options.fixMentionsBottomDirectionGrowth) return false; //Fix mention container growth direction downwards
 
       if (this.options.mentionsContainment === "quill") {
         var mentionOffsetHeight = this.mentionContainer.offsetHeight;
